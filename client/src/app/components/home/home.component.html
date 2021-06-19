@@ -1,0 +1,57 @@
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand navbar-light bg-light shadow">
+        <a class="navbar-brand" href="#">My Address</a>
+        
+            <button class="btn btn-secondary ml-auto" (click)="cleanToken()">Logout</button>
+    
+        
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-9 shadow card border-0 p-4">
+                <form class="form-inline form-row">
+                    <input class="form-control mr-sm-2 col-10 col-xl-11" placeholder="Search Address ..."
+                        aria-label="Search" (keyup)='onAddressType(selectedAddress.formattedAddress)'
+                        [(ngModel)]='selectedAddress.formattedAddress' [ngModelOptions]="{standalone: true}" />
+                    <button class="btn btn-outline-success my-2 my-sm-0" title="add address.."
+                        (click)="AddAddress()">Add</button>
+                    <div class="list-group">
+                        <a *ngFor="let Address of Addresses" (click)="onselectAddress(Address)" class="list-group-item">
+                            {{Address.formattedAddress}}
+                        </a>
+                    </div>
+                </form>
+                <hr style="border-width: 2px; border-color: black" class="pt-3">
+
+                <ng-container *ngIf="Address != '' else showTemp">
+                    <ng-container *ngFor="let item of Address">
+
+                        <div class="list-group ">
+
+                            <div class="list-group-item list-group-item-action border-0 rounded-0 shadow-sm m-1 ">
+                                <div class="row">
+                                    <div class="col-11 " style="margin: auto;">
+                                        {{item.Address}}
+                                    </div>
+                                    <button class="btn btn-danger col-1" (click)="deleteAddrss(item._id)">
+                                        X
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+                <ng-template #showTemp>
+                    <div class="jumbotron text-justify">
+                        <h4>Add User Addresses</h4>
+                    </div>
+                </ng-template>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 
+{{Address | json}} -->

@@ -1,0 +1,14 @@
+{
+    "/api/security/oauth": {
+        "target": "https://outpost.mapmyindia.com",
+        "secure": false
+    },
+    "/api/places/": {
+        "target": "https://atlas.mapmyindia.com",
+        "secure": false
+    },
+    "/api/server": {
+        "target": "http://localhost:3000",
+        "secure": false
+    }
+}
