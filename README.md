@@ -119,8 +119,8 @@ To Run Server in Dev Mode this project run
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** Angular, ngx-Bootstrap
 
-**Server:** Node, Express
+**Server:** Node, Express , Mongodb 
 
   
